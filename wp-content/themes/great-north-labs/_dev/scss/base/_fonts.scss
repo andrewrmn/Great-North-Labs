@@ -1,0 +1,51 @@
+// ---------------------------------------------------------------------
+//  @font face
+// ---------------------------------------------------------------------
+
+@font-face {
+    font-family: 'colfax';
+    src: url('../fonts/ColfaxWebLight.eot');
+    src: url('../fonts/ColfaxWebLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ColfaxWebLight.woff2') format('woff2'),
+         url('../fonts/ColfaxWebLight.woff') format('woff'),
+         url('../fonts/ColfaxWebLight.ttf') format('truetype'),
+         url('../fonts/ColfaxWebLight.svg#ColfaxWebLight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'colfax';
+    src: url('../fonts/ColfaxWebRegular.eot');
+    src: url('../fonts/ColfaxWebRegular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ColfaxWebRegular.woff2') format('woff2'),
+         url('../fonts/ColfaxWebRegular.woff') format('woff'),
+         url('../fonts/ColfaxWebRegular.ttf') format('truetype'),
+         url('../fonts/ColfaxWebRegular.svg#ColfaxWebRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'colfax';
+    src: url('../fonts/ColfaxWebMedium.eot');
+    src: url('../fonts/ColfaxWebMedium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ColfaxWebMedium.woff2') format('woff2'),
+         url('../fonts/ColfaxWebMedium.woff') format('woff'),
+         url('../fonts/ColfaxWebMedium.ttf') format('truetype'),
+         url('../fonts/ColfaxWebMedium.svg#ColfaxWebMedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+// @font-face {
+//     font-family: 'proxima_nova_rgregular';
+//     src: url('../fonts/ColfaxWebRegular.eot');
+//     src: url('../fonts/ColfaxWebRegular.eot?#iefix') format('embedded-opentype'),
+//          url('../fonts/ColfaxWebRegular.woff2') format('woff2'),
+//          url('../fonts/ColfaxWebRegular.woff') format('woff'),
+//          url('../fonts/ColfaxWebRegular.ttf') format('truetype'),
+//          url('../fonts/ColfaxWebRegular.svg#proxima_nova_rgregular') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }

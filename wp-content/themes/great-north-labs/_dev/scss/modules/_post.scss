@@ -1,0 +1,67 @@
+// ---------------------------------------------------------------------
+//  Post Styles
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Post Preview
+// ----------------------------------------
+
+.post.post-preview {
+    margin-bottom: 50px;
+}
+
+.post-preview__img.bg-image,
+.post__img.bg-image {
+    height: 307px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+
+    @include stop-at($small) {
+        height: 180px;
+    }
+}
+
+.post-preview a {
+    display: block;
+    color: $gray-dark;
+}
+
+.entry-content {
+    margin-bottom: 10px;
+}
+
+.entry-header {
+
+    a {
+        color: $gray-dark;
+    }
+}
+
+
+// ----------------------------------------
+// Single Post
+// ----------------------------------------
+
+.post {
+    max-width: 945px;
+    margin: 0 auto;
+
+    .entry-header {
+        margin-bottom: 30px;
+    }
+}
+
+.post-content {
+    max-width: 750px;
+    margin: 60px auto;
+}
+
+.post__img.bg-image {
+    height: 378px;
+
+    @include stop-at($small) {
+        height: 280px;
+    }
+}

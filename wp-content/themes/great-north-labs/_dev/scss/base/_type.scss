@@ -1,0 +1,152 @@
+// ---------------------------------------------------------------------
+//  Typography Styles
+// ---------------------------------------------------------------------
+
+// ----------------------------------------
+// Heading Mixins
+// ----------------------------------------
+
+
+@mixin h1 {
+    font-size: 3.8rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 50px;
+    margin-bottom: 10px;
+
+    @include start-at($medium) {
+        font-size: 44px;
+        line-height: 50px;
+        margin-bottom: 15px;
+    }
+}
+
+@mixin h2 {
+    font-size: 3.0rem;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1.2222;
+
+    @include start-at($medium) {
+        font-size: 3.6rem;
+    }
+}
+
+@mixin h3 {
+    font-size: 2.0rem;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1.5;
+
+    + p {
+        margin-top: 5px;
+    }
+
+    @include start-at($medium){
+        font-size: 2.2rem;
+    }
+}
+
+@mixin h4 {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 1.86px;
+    text-transform: uppercase;
+}
+
+@mixin h5 {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1.86px;
+    text-transform: uppercase;
+}
+
+@mixin h6 {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+
+// ----------------------------------------
+// Headings
+// ----------------------------------------
+
+.h1 {
+    @include h1;
+}
+
+.h2 {
+    @include h2;
+}
+
+.h3 {
+    @include h3;
+}
+
+.h4 {
+    @include h4;
+}
+
+.h5 {
+    @include h5;
+}
+
+.h6 {
+    @include h6;
+}
+
+
+// ----------------------------------------
+// Paragraph Style Mixins
+// ----------------------------------------
+
+@mixin para {
+    display: block;
+    font-family: $sans-serif;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 300px;
+    letter-spacing: 0;
+
+    @include start-at($medium){
+        font-size: 1.8rem;
+    }
+}
+
+@mixin p-sm {
+    display: block;
+    font-size: 1.5rem;
+    line-height: $base-line-height;
+    font-weight: 300;
+}
+
+
+// ----------------------------------------
+// Paragraph Styles
+// ----------------------------------------
+
+.p,
+p {
+    @include para;
+}
+
+.p-lg {
+    @include h3;
+}
+
+.p-sm,
+small {
+  @include p-sm;
+}
+
+small {
+    font-size: 1.3rem;
+}
+
+
+// ----------------------------------------
+// Type Utilities
+// ----------------------------------------

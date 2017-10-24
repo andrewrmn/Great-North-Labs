@@ -1,0 +1,90 @@
+// ---------------------------------------------------------------------
+//  Site Footer Styles
+// ---------------------------------------------------------------------
+
+$fb: $medium;
+
+.site-footer {
+    padding: 26px 0;
+    width: 100%;
+    border-top: 1px solid $border;
+    border-bottom: 16px solid $gray-dark;
+
+    .wrapper-wide {
+
+        @include start-at($fb) {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+    }
+}
+
+body.home {
+    background: $brand;
+}
+
+body.home .site-footer {
+    border-top: none;
+    border-bottom: none;
+    position: absolute;
+    color: $white;
+
+    .social-list svg {
+        fill: $white;
+    }
+
+    .secondary-navigation a {
+        color: $white;
+    }
+}
+
+
+.secondary-navigation {
+    margin-bottom: 20px;
+
+    @include start-at($fb) {
+        display: flex;
+        align-items: baseline;
+        order: 2;
+        margin-bottom: 0;
+
+        > * + * {
+            &:before {
+                content: '/';
+                display: inline-block;
+                margin: 0 10px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    li {
+        display: flex;
+    }
+
+
+
+    a {
+        @include p-sm;
+        display: inline-block;
+        color: $gray-dark;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+
+.site-footer__content {
+
+    .social-list {
+        //margin-bottom: 10px;
+    }
+
+    @include start-at($fb) {
+
+    }
+
+}

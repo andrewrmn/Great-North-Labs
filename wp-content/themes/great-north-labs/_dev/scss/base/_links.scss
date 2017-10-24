@@ -1,0 +1,98 @@
+// ---------------------------------------------------------------------
+//  Link & Button Styles
+// ---------------------------------------------------------------------
+
+@mixin btn {
+    display: inline-block;
+    text-align: center;
+    min-width: 140px;
+    background: transparent;
+    border: 1px solid $gray-dark;
+    color: $gray-dark;
+
+    @include h4;
+    line-height: 1;
+    letter-spacing: 2px;
+    padding: 17px 12px 15px;
+
+    transition: background $transition, color $transition;
+
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4px;
+        background: white;
+        width: 13px;
+        height: 13px;
+        border-right: 1px solid $gray-dark;
+        transform: rotate(45deg);
+        transform-origin: top right;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        background: $gray-dark;
+        color: $white;
+    }
+}
+
+.btn {
+    @include btn;
+}
+
+.btn-dark {
+    @include btn;
+    background: $gray-light;
+
+    &:after {
+        background: $gray-light;
+    }
+}
+
+
+// ----------------------------------------
+// Links
+// ----------------------------------------
+
+.link {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.arrow-link {
+    @include h5;
+    display: flex;
+    color: inherit;
+
+    &:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        margin-right: 12px;
+        border-left: 9px solid currentColor;
+    }
+
+}
+
+
+    .arrow-link {
+        margin: 0 auto;
+    }
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.noTouch .tel,
+.noTouch .tel:hover {
+    cursor: text;
+}

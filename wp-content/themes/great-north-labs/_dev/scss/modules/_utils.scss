@@ -1,0 +1,118 @@
+// ---------------------------------------------------------------------
+//  Utility Classes
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Type Utils
+// ----------------------------------------
+.text-bold {
+    font-weight: 500;
+}
+.text-black {
+    color: $black;
+}
+.text-white {
+    color: $white;
+}
+.text-brand {
+    color: $brand;
+}
+.text-light {
+    color: $gray;
+}
+.text-dark {
+    color: $gray-dark;
+}
+
+// ----------------------------------------
+// Flex Layouts
+// ----------------------------------------
+.has-accent {
+
+    &:after {
+        content: "";
+        width: 24px;
+        height: 6px;
+        display: block;
+        background: $brand;
+        margin: 0 0 15px 0;
+    }
+}
+
+// ----------------------------------------
+// Flex Layouts
+// ----------------------------------------
+
+.flex {
+    display: flex;
+}
+
+.flex--align-center {
+    align-items: center;
+}
+
+.flex--justify-between {
+    justify-content: space-between;
+}
+
+.flex-j-center {
+    justify-content: center;
+}
+
+.flex__grow {
+    flex-grow: 1;
+}
+
+.v-center {
+    display: flex;
+    align-items: center;
+}
+
+.inline-content {
+    display: flex;
+    align-items: flex-start;
+
+    > * {
+        margin-right: 20px;
+    }
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.group {
+    @include clearfix;
+}
+
+.is-hidden {
+    display: none;
+}
+
+@include stop-at($small) {
+    .is-hidden-xs {
+        display: none;
+    }
+}
+
+@include stop-at($medium) {
+    .is-hidden-sm {
+        display: none;
+    }
+}
+
+.sr-only,
+.screen-reader-text {
+    @include visually-hidden;
+}
+
+.text-center {
+    text-align: center;
+
+    p, img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

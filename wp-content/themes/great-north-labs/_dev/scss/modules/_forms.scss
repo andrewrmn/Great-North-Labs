@@ -1,0 +1,484 @@
+// ---------------------------------------------------------------------
+//  Form Styles (Gravity Forms)
+// ---------------------------------------------------------------------
+
+.user-content .gravity-form ul {
+    list-style-type: none;
+    margin: 0;
+    @include clearfix;
+}
+
+.user-content .gravity-form li {
+    margin: 0;
+}
+
+.gravity-form {
+    width: 101%;
+    display: block;
+}
+
+
+.gform_wrapper {
+    max-width: 750px;
+    margin: 0 auto;
+
+    .gform_title {
+        @include h1;
+    }
+
+    .gform_description {
+        @include h3;
+
+        &:after {
+            @include p-sm;
+            margin-top: 30px;
+            content: '*All fields sare required';
+        }
+    }
+
+    .gform_heading {
+        margin-bottom: 40px;
+    }
+}
+
+
+// ----------------------------------------
+// Newsletter Form
+// ----------------------------------------
+
+.newsletter-form {
+    input[type="email"] {
+        background: transparent;
+        border-bottom: 1px solid $gray;
+
+        @include start-at($medium) {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+
+// ----------------------------------------
+// Labels
+// ----------------------------------------
+.gfield_label,
+.gfield_radio label,
+.gfield_checkbox label,
+.loginForm label {
+    @include h4;
+    margin-bottom: 2px;
+
+    @include start-at($small) {
+        margin-bottom: 5px;
+    }
+}
+
+.gfield_required,
+.ginput_counter {
+    display: none;
+}
+
+.gfield_visibility_ {
+    @include visually-hidden;
+}
+
+.validation_message {
+    color: $error;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    font-size: 1.4rem;
+}
+
+.validation_error {
+    display: none;
+}
+
+// ----------------------------------------
+// Layouts
+// ----------------------------------------
+
+.user-content .gravity-form,
+.gravity-form {
+
+    .full,
+    .half,
+    .third {
+        display: inline-block;
+        padding-bottom: 15px;
+        position: relative;
+    }
+
+    .full {
+        width: 99%;
+    }
+
+    .half {
+        width: 49%;
+        margin-right: 1%;
+        float: left;
+    }
+
+    .third {
+        width: 32.3333333%;
+        margin-right: 1%;
+        float: left;
+    }
+
+    @include stop-at($small) {
+        .full,
+        .half,
+        .third {
+            width: 99%;
+            float: none;
+            clear: both;
+        }
+    }
+}
+
+
+// ----------------------------------------
+// Containers
+// ----------------------------------------/
+$INPUT-HEIGHT: 48px;
+
+.gfield {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.ginput_container {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    min-height: $INPUT-HEIGHT;
+
+}
+
+.field-wrap {
+    margin-bottom: 20px;
+}
+
+.gfield_error {
+    // input:not([type="submit"]),
+    // textarea,
+    // select {
+    //     background: rgba($error, 0.4);
+    // }
+}
+
+// ----------------------------------------
+// Input Styles
+// ----------------------------------------
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    -webkit-appearance: none;
+    width: 100%;
+    height: $INPUT-HEIGHT;
+    margin: 0;
+    padding: 0 8px;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid $gray-light;
+    background: $gray-light;
+    font-size: 1.6rem;
+    color: $gray-dark;
+    transition: background $transition, border-color $transition;
+
+
+    &:focus {
+        outline: none;
+        //color: $white;
+        border-color: $gray;
+        background: transparent;
+    }
+}
+
+textarea {
+    min-height: 192px;
+    max-height: 240px;
+    padding: 10px 15px;
+    overflow: auto;
+    resize: vertical;
+}
+
+
+.gform_button {
+    box-shadow: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border-radius: 0;
+
+    @include btn;
+    width: 200px;
+    background: $gray-dark;
+    color: $white;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: transparent;
+        color: $gray-dark;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.gform_footer {
+    position: relative;
+    display: inline-block;
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 1px;
+        right: -3px;
+        background: white;
+        width: 13px;
+        height: 13px;
+        border-left: 1px solid $gray-dark;
+        transform: rotate(45deg);
+        transform-origin: bottom left;
+    }
+}
+
+.gform_ajax_spinner {
+    position: absolute;
+    display: none !important;
+}
+
+button {
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+
+// ----------------------------------------
+// Custom Select Dropdown
+// ----------------------------------------
+
+.ginput_container select {
+    display: block;
+    -webkit-appearance: none;
+    border-radius: 0;
+    position: relative;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    cursor: pointer;
+}
+
+.isIE .select select::-ms-expand {
+    display: none;
+}
+
+.select {
+
+    .ginput_container {
+
+        select {
+            display: block;
+            -webkit-appearance: none;
+            border-radius: 0;
+            position: relative;
+            -moz-appearance: none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            cursor: pointer;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 44px;
+            height: calc(100% - 2px);
+            top: 1px;
+            right: 1px;
+            background: transparent url('../images/svgs/arrow-down.svg') no-repeat;
+            background-size: 14px 8px;
+            background-position: center;
+            pointer-events: none;
+        }
+    }
+
+}
+
+.isIE .select .ginput_container{
+     select {
+        padding-right: 0;
+    }
+
+    &:after {
+        //display: none;
+    }
+}
+
+
+// ----------------------------------------
+// Custom Radio Button
+// ----------------------------------------
+
+.gfield_checkbox {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    margin-top: 5px;
+
+    input {
+        @include visually-hidden;
+    }
+
+    label {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50px;
+        background-color: $error;
+        -webkit-transition: .4s;
+        transition: .4s;
+        text-indent: -9999px;
+        margin-bottom: 0;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: all $trans;
+            border-radius: 50%;
+        }
+    }
+
+    input:checked + label {
+        background-color: $success;
+    }
+
+    input:checked + label:before {
+        transform: translateX(22px);
+    }
+}
+
+
+
+// ----------------------------------------
+// Custom Checkbox
+// ----------------------------------------
+// .gfield_radio,
+// .gfield_checkbox {
+//     display: table;
+//     width: 100%;
+//
+//     input {
+//         @include visually-hidden;
+//     }
+//
+//     label:before {
+//         content: "";
+//         display: inline-block;
+//         width: 12px;
+//         height: 12px;
+//         margin-right: 8px;
+//         border: 1px solid $black;
+//         background-color: $white;
+//         transition: background-color $transition;
+//         cursor: pointer;
+//     }
+//
+//     input:checked + label {
+//
+//         &:before {
+//             background-color: $black;
+//         }
+//     }
+// }
+//
+
+// ----------------------------------------
+// File Uploader
+// ----------------------------------------
+.fileUpload {
+
+    input {
+        height: auto;
+        display: block;
+        border: 1px dashed $gray-light;
+        text-align: center;
+        padding: 38px 24px;
+        margin-bottom: 12px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all $transition;
+
+        &:hover {
+            border-color: $brand;
+            color: $brand;
+        }
+    }
+
+    .ginput_container {
+        height: auto;
+    }
+
+    .gform_drop_instructions {
+        //display: none;
+    }
+}
+
+
+// ----------------------------------------
+// touch styles
+// ----------------------------------------
+.isTouch {
+
+    .ginput_container {
+
+        input,
+        textarea,
+        select {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@mixin placeholder-style {
+    color: $gray;
+    //font-size: 1.8rem;
+    opacity: 0.9;
+    transition: opacity $transition;
+}
+
+::-webkit-input-placeholder {
+   @include placeholder-style;
+}
+
+:-moz-placeholder {
+    @include placeholder-style;
+}
+
+::-moz-placeholder {
+    @include placeholder-style;
+}
+
+:-ms-input-placeholder {
+    @include placeholder-style;
+}

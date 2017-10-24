@@ -1,0 +1,140 @@
+// ---------------------------------------------------------------------
+//  Lists Styles
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Inline List Styles
+// ----------------------------------------
+
+.ul > * {
+	list-style-type: disc;
+	margin-left: 36px;
+}
+
+.ul-inline {
+    overflow: hidden;
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+
+	> * {
+		padding-right: 10px;
+	}
+}
+
+.ul-inline--piped {
+
+	> * + *:before {
+	   content: "|";
+	   margin-right: 10px;
+	   display: inline-block;
+   }
+}
+
+
+// ----------------------------------------
+// Ordered List
+// ----------------------------------------
+
+.ul,
+.user-content > ul {
+	list-style-type: none;
+	list-style-position: outside;
+
+	li {
+		position: relative;
+		padding-left: 18px;
+
+		+ li {
+			margin-top: 10px;
+		}
+
+		&:before {
+			content: '•';
+			color: $brand;
+			margin-right: 5px;
+			position: absolute;
+			top: 3px;
+			left: 0;
+			font-size: 24px;
+			line-height: 1;
+		}
+	}
+
+	ul {
+	//	margin-left: 20px;
+		margin: 10px 0 10px 30px;
+		list-style-type: none;
+
+		li {
+
+			&:before {
+				content: '-';
+				color: $black;
+				// margin-right: 5px;
+				// position: absolute;
+				// top: -2px;
+				// left: 0;
+			}
+			//
+			+ li {
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+.ol,
+.user-content ol {
+	columns: 200px 2;
+	margin: 0;
+	counter-reset: item;
+	column-fill: auto;
+
+    li {
+		display: block;
+		margin-bottom: 25px;
+		break-inside: avoid;
+
+		&:before {
+	        content: counter(item) ". ";
+	        counter-increment: item;
+	        color: $brand;
+	    }
+	}
+}
+
+// ----------------------------------------
+// Social List Styles
+// ----------------------------------------
+
+.social-list {
+    display: inline-block;
+    vertical-align: middle;
+
+
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+		//margin-right: 4px;
+
+        &:last-child {
+			margin-right: 0;
+		}
+    }
+
+	a {
+		display: block;
+		padding: 4px;
+
+		&:hover {
+	        opacity: 0.6;
+
+	    }
+	}
+
+    svg {
+        fill: $gray-dark;
+    }
+}

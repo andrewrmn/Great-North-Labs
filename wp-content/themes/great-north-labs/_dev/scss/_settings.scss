@@ -1,0 +1,84 @@
+// ---------------------------------------------------------------------
+//  SCSS Settings
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Fonts
+// ----------------------------------------
+
+// Font weights: 400 | 900
+//$serif: 'Playfair Display', serif;
+
+// Font weights: 300 | 400 | 700
+$sans-serif: 'colfax', mono, serif;
+
+
+// ----------------------------------------
+// Font Size/ Line Height
+// ----------------------------------------
+$main-font: $sans-serif;
+$base-font-size: 1.6rem;
+$base-line-height: 1.87;
+
+
+// ----------------------------------------
+// Colors
+// ----------------------------------------
+
+
+$brand: #3084CA; // blue
+$green: #09B39C ; // green
+$orange: #F3942F; // orange
+
+$gray-dark: #595C5D;
+$gray: #C1C2C2;
+$gray-light: #EEF1F6;
+
+$border: #EAEBEB;
+
+$white: #ffffff;
+$black: #282828;
+
+
+$success: #01B433;
+$error: #FF3333;
+
+
+// ----------------------------------------
+// Breakpoints
+// ----------------------------------------
+
+$xlarge: 1440px;
+$large: 1025px;
+$medium: 800px;
+$small: 600px;
+
+@mixin start-at($device-width) {
+  @media (min-width: $device-width) {
+    @content;
+  }
+}
+
+@mixin stop-at($device-width) {
+  @media (max-width: $device-width - 1) {
+    @content;
+  }
+}
+
+
+// ----------------------------------------
+// Global Variables
+// ----------------------------------------
+
+$header-breakpoint: $medium;
+
+$padding: 48px;
+$transition-speed: 0.4s;
+$transition: $transition-speed ease;
+// cuz I no type good
+$trans: $transition-speed ease;
+
+$wrapper-percentage: 94%;
+$wrapper-width: 1128px;
+$wrapper-padding: (100% - $wrapper-percentage) / 2;

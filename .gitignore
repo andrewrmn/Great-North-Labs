@@ -1,0 +1,15 @@
+# Ignore everything in the root except the "wp-content" directory and following files:
+/*
+!.gitignore
+!README.md
+!package.json
+!gulpfile.js
+!sample-local-config.php
+!wp-config-sample.php
+!wp-content/
+
+# Ignore everything in "wp-content" except the theme you're using
+wp-content/*
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/great-north-labs
