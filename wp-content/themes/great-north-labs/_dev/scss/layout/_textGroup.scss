@@ -32,7 +32,7 @@ $text-group-gap-tall: 30px;
 }
 
 .text-group {
-	@include text-group(text-group, 12px);
+	@include text-group(text-group, 15px);
 }
 
 .text-group-short {

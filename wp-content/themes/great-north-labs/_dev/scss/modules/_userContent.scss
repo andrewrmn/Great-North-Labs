@@ -2,6 +2,22 @@
 //  User Content Styles. WYSIWYG
 // ---------------------------------------------------------------------
 
+.user-content.user-content--sm {
+    p {
+        @include p-sm;
+    }
+}
+.user-content.user-content--lg {
+    p {
+        @include h3;
+    }
+}
+.user-content.user-content--lead {
+    p:first-of-type {
+        @include h3;
+    }
+}
+
 .user-content {
 @include clearfix;
 font-weight: normal;

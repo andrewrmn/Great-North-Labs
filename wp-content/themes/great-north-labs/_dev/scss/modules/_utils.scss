@@ -25,12 +25,29 @@
     color: $gray-dark;
 }
 
+.text-thin {
+    max-width: 700px;
+
+    .text-center & {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.bg-white {
+    background: $white;
+
+    + .bg-white {
+        border-top: 1px solid $border;
+    }
+}
+
 // ----------------------------------------
 // Flex Layouts
 // ----------------------------------------
 .has-accent {
 
-    &:after {
+    &:before {
         content: "";
         width: 24px;
         height: 6px;
@@ -46,6 +63,12 @@
 
 .flex {
     display: flex;
+}
+
+@include start-at($small) {
+    .flex-after-sm {
+        display: flex;
+    }
 }
 
 .flex--align-center {

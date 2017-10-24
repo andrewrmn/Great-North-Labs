@@ -10,22 +10,27 @@
 
 get_header();  while ( have_posts() ) : the_post(); ?>
 
-    <div class="wrapper section">
+    <div class="home-hero">
+        <div class="wrapper text-white">
+            <div class="text-thin">
+                <h2 class="h1">Great North Labs.</h2>
+                <p class="h3">We are a venture capital fund and startup school hyper-focused on the companies and entrepenuers of tomorrow.</p>
+            </div>
 
-        <h1 class="h1">Heading 1</h1>
-        <h1 class="h2">Heading 2</h1>
-        <h1 class="h3 has-accent">Heading 3</h1>
-        <h1 class="h4">Heading 4</h1>
+            <div class="text-thin section section--flush-bottom flex-after-sm ">
+                <a class="arrow-link arrow-link--inline" href="">
+                    <span>Learn About <span class="text-bold">Our Fund</span></span>
+                </a>
 
-        <p class="p-lg">Paragraph text LARGE</p>
-        <p>Paragraph text</p>
+                <a class="arrow-link arrow-link--flush" href="">
+                    <span>Discover <span class="text-bold">Startup School</span></span>
+                </a>
+            </div>
+        </div>
 
-        <a class="arrow-link" href="">
-            <span>Learn About <span class="text-bold">Our Fund</span></span>
-        </a>
-
-
-
+        <figure class="bg-image">
+            <?php the_post_thumbnail(); ?>
+        </figure>
     </div>
 
 

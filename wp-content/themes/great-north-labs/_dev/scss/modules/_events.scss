@@ -1,3 +1,54 @@
 // ---------------------------------------------------------------------
 //  Events
 // ---------------------------------------------------------------------
+
+.event-preview {
+    padding: 50px 0;
+
+    + .event-preview {
+        padding-top: 0;
+
+        .event-preview__img:after {
+            transform: skewX(15deg);
+        }
+    }
+
+    @include start-at($medium){
+        display: flex;
+        align-items: center;
+    }
+}
+
+.event-preview__img {
+    position: relative;
+    padding: 75px 0;
+
+    .bg-image {
+        position: relative;
+    }
+
+    &:after {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 300px;
+        left: calc(50% - 150px);
+        background: $orange;
+        mix-blend-mode: multiply;
+        transform: skewX(-15deg);
+    }
+
+    @include start-at($medium){
+        width: 55%;
+    }
+}
+
+.event-preview__info {
+
+
+    @include start-at($medium){
+        width: 45%;
+        padding-left: 100px;
+    }
+}

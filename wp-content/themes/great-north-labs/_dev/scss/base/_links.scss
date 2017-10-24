@@ -9,15 +9,12 @@
     background: transparent;
     border: 1px solid $gray-dark;
     color: $gray-dark;
-
     @include h4;
     line-height: 1;
     letter-spacing: 2px;
     padding: 17px 12px 15px;
-
-    transition: background $transition, color $transition;
-
     position: relative;
+    transition: background $transition, color $transition;
 
     &:after {
         content: '';
@@ -69,6 +66,7 @@
     @include h5;
     display: flex;
     color: inherit;
+    line-height: 1;
 
     &:before {
         content: '';
@@ -80,12 +78,26 @@
         border-left: 9px solid currentColor;
     }
 
+    &.arrow-link--inline {
+        margin-bottom: 20px;
+
+        @include start-at($small) {
+            margin-right: 60px;
+        }
+    }
+}
+
+* + .arrow-link {
+    margin-top: 30px;
+}
+* + .arrow-link--flush {
+    margin-top: 0;
 }
 
 
-    .arrow-link {
-        margin: 0 auto;
-    }
+.text-center .arrow-link {
+    margin: 0 auto;
+}
 
 
 // ----------------------------------------

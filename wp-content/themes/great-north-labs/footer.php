@@ -11,6 +11,8 @@
 
 ?>
 
+	<?php get_sidebar(); ?>
+
 	</main><!-- #content -->
 
 	<footer id="colophon" class="site-footer">

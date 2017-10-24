@@ -50,7 +50,7 @@
 @mixin h4 {
     font-size: 13px;
     font-weight: 500;
-    line-height: 1.2;
+    //line-height: 1.2;
     letter-spacing: 1.86px;
     text-transform: uppercase;
 }
@@ -58,14 +58,14 @@
 @mixin h5 {
     font-size: 13px;
     font-weight: 400;
-    line-height: 1.2;
+    //line-height: 1.2;
     letter-spacing: 1.86px;
     text-transform: uppercase;
 }
 
 @mixin h6 {
     font-size: 1.6rem;
-    line-height: 1.4;
+    //line-height: 1.4;
     font-weight: 700;
 }
 

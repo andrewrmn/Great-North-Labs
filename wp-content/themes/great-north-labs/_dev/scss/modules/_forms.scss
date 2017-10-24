@@ -58,6 +58,59 @@
 }
 
 
+.newsletter-wrap {
+    padding: 60px 0;
+    border-top: 1px solid $border;
+
+    .h2 {
+        margin-bottom: 10px;
+    }
+
+    @include start-at($small) {
+
+        .wrapper {
+            display: flex;
+            align-items: baseline;
+        }
+
+        form {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            padding-left: 10px;
+        }
+
+        .field-wrap {
+            flex-grow: 1;
+            margin-bottom: 0;
+            padding-right: 10px;
+        }
+
+        .h2 {
+            margin-bottom: 0;
+            flex-basis: 0;
+            white-space: nowrap;
+        }
+    }
+
+    @include start-at($medium) {
+        padding: 100px 0;
+        
+        form {
+            padding-left: 60px;
+        }
+
+        .field-wrap {
+            padding-right: 20px;
+        }
+    }
+}
+
+.newsletter-form-inline {
+
+}
+
+
 // ----------------------------------------
 // Labels
 // ----------------------------------------

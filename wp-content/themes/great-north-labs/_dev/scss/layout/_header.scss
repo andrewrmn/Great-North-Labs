@@ -46,6 +46,21 @@ $header-height: 120px;
 	}
 }
 
+body.home,
+body.venture-fund,
+body.startup-school {
+
+	.site-header {
+		position: absolute;
+		top: 0;
+		background: transparent;
+
+		&:after {
+			display: none;
+		}
+	}
+}
+
 
 // ----------------------------------------
 // Logo Styles
@@ -91,7 +106,6 @@ $logo-height: 72px;
 		min-width: 566px;
 		width: auto;
 		padding-right: $wrapper-padding;
-
 
 		li {
 			height: 100%;

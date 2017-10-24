@@ -16,6 +16,18 @@
 
 @font-face {
     font-family: 'colfax';
+    src: url('../fonts/ColfaxWebLightItalic.eot');
+    src: url('../fonts/ColfaxWebLightItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ColfaxWebLightItalic.woff2') format('woff2'),
+         url('../fonts/ColfaxWebLightItalic.woff') format('woff'),
+         url('../fonts/ColfaxWebLightItalic.ttf') format('truetype'),
+         url('../fonts/ColfaxWebLightItalic.svg#ColfaxWebLightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'colfax';
     src: url('../fonts/ColfaxWebRegular.eot');
     src: url('../fonts/ColfaxWebRegular.eot?#iefix') format('embedded-opentype'),
          url('../fonts/ColfaxWebRegular.woff2') format('woff2'),

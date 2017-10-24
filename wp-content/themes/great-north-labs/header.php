@@ -11,7 +11,17 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+	global $post;
+	$post_slug=$post->post_name;
+
+	$bodyClass = $post_slug;
+	if(is_front_page()){
+		$bodyClass = 'hero-mask hero-mask--home';
+	}
+?>
+
+<body <?php body_class($bodyClass); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'great-north-labs' ); ?></a>
 

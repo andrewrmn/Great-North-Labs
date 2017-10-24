@@ -1,107 +1,153 @@
-// ---------------------------------------------------------------------
-//  Tabs
-// ---------------------------------------------------------------------
-
-// Tab Styles
-$tabs-tab-bg-color: transparent;
-$tabs-tab-text-color: $black;
-$tabs-tab-padding: 4px 6px;
-$tabs-tab-opacity: 1;
-$tabs-tab-text-alignment: left;
-
-// Active Tab Styles
-$tabs-active-tab-bg-color: $gray-light;
-$tabs-active-tab-text-color: $black;
-
-//Body Styles
-$tabs-body-bg-color: $gray-light;
-$tabs-body-text-color: $black;
-$tabs-body-padding: 12px 8px;
-
-
-.tabs {
-    overflow: hidden;
-}
-
-.tabs > * {
-    display: inline;
-    font-size: 0;
-}
-
-.tabs--2up > * > .tab__tab {
-    width: 50%;
-}
-
-.tabs--3up > * > .tab__tab {
-    width: 33.33333%;
-}
-
-.tabs--4up > * > .tab__tab {
-    width: 25%;
-}
-
-
-// ----------------------------------------
-// Tab Tab
-// ----------------------------------------
-.tab__tab {
-    width: 100%;
-    display: inline-block;
-    font-size: 1.2rem;
-    padding: $tabs-tab-padding;
-    text-align: $tabs-tab-text-alignment;
-    background-color: $tabs-tab-bg-color;
-    opacity: $tabs-tab-opacity;
-    color: $tabs-tab-text-color;
-    transition: all $transition;
-}
-
-.tab__tab:hover {
-    cursor: pointer;
-    opacity: 1;
-}
-
-.tabs .is-active .tab__tab {
-    opacity: 1;
-    background-color: $tabs-active-tab-bg-color;
-    color: $tabs-active-tab-text-color;
-}
-
-// ----------------------------------------
-// Tab Body
-// ----------------------------------------
-.tab__bd {
-    overflow: hidden;
-    display: block;
-    width: 100%;
-    height: inherit;
-    float: left;
-    font-size: $base-font-size;
-    padding: $tabs-body-padding;
-    background-color: $tabs-body-bg-color;
-    color: $tabs-body-text-color;
-    opacity: 0;
-    transition: opacity $transition;
-}
-
-.no-js .tabs .tab__bd,
-.tabs .is-active .tab__bd { 
-    opacity: 1;
-}
-
-
-// ----------------------------------------
-// Stack
-// ----------------------------------------
-@include start-at($small) {
-    .tabs--hThenV > * {
-        display: inline;
-        font-size: 0;
-    }
-}
-
-@include stop-at($small) {
-    .tabs--hThenV > * > .tab__tab {
-        width: 100%;
-    }
-}
+// // ---------------------------------------------------------------------
+// //  Tabs
+// // ---------------------------------------------------------------------
+//
+// .tabs {
+//     position: relative;
+// }
+//
+// .tab {
+//
+//     @include start-at($medium) {
+//         display: flex;
+//         align-items: center;
+//         flex-wrap: wrap;
+//         justify-content: space-between;
+//     }
+//
+//     &:last-child .tab-tab:after {
+//         display: none;
+//     }
+//
+//     .highlight {
+//        transition: color $trans;
+//     }
+//
+//     &.is-active .h3 .highlight {
+//         color: $green;
+//     }
+// }
+//
+//
+// // ----------------------------------------
+// // Tab Tab
+// // ----------------------------------------
+//
+// .tab-tab {
+//     position: relative;
+//     background: $white;
+//     border-radius: 4px;
+//     height: auto;
+//     padding: 15px 20px;
+//     display: flex;
+//     align-items: center;
+//     margin-bottom: 20px;
+//     transition: box-shadow $trans, border-color $trans , opacity $trans;
+//     border: 1px solid $white;
+//
+//     svg {
+//         display: inline-block;
+//         fill: $brand;
+//         margin: 0 3px;
+//     }
+//
+//     &:after {
+//         content: '';
+//         display: block;
+//         position: absolute;
+//         width: 16px;
+//         height: 66px;
+//         left: 15px;
+//         bottom: -30px;
+//         background: url('../images/arrows.svg') center / cover no-repeat;
+//         z-index: 2;
+//         animation: pulse 2s ease infinite;
+//     }
+//
+//     @include stop-at($medium) {
+//         border-color: rgba(205,209,217,0.20);
+//         box-shadow: 0 6px 10px 0 rgba(205,209,217,0.50);
+//
+//         .h3 {
+//             font-size: 16px;
+//         }
+//
+//         &:after {
+//             left: calc(100% - 25px);
+//         }
+//     }
+//
+//     @include start-at($medium) {
+//         width: 60%;
+//         max-width: 652px;
+//         height: 145px;
+//         padding: 15px 50px;
+//         //cursor: pointer;
+//         opacity: 0.6;
+//
+//         &:after {
+//             opacity: 0;
+//             transition: opacity $trans, box-shadow $trans, border-color $trans;
+//         }
+//
+//         .is-active & {
+//             border-color: rgba(205,209,217,0.20);
+//             box-shadow: 0 6px 10px 0 rgba(205,209,217,0.50);
+//             opacity: 1;
+//
+//             &:after {
+//                 opacity: 1;
+//             }
+//         }
+//     }
+// }
+//
+// // ----------------------------------------
+// // Tab Image
+// // ----------------------------------------
+//
+// .tab-img {
+//     padding: 0px 0 40px;
+//
+//     img {
+//         margin: 0 auto;
+//     }
+//
+//     @include start-at($medium) {
+//         padding: 20px 40px;
+//         width: 40%;
+//         position: absolute;
+//         right: 0;
+//         top: 50%;
+//         transform: translate3d(0, -50%, 0);
+//
+//         img {
+//             margin: 0 auto;
+//             opacity: 0;
+//             transition: opacity $trans, transform $trans;
+//             transform: translateY(30px);
+//         }
+//
+//         .is-active & img {
+//             opacity: 1;
+//             transform: translateY(0);
+//         }
+//     }
+// }
+//
+//
+// // ----------------------------------------
+// // Pulse
+// // ----------------------------------------
+//
+// @keyframes pulse {
+//     0% {
+//         transform: translateY(0);
+//     }
+//     50% {
+//         transform: translateY(4px);
+//     }
+//     100% {
+//         transform: translateY(0);
+//     }
+// }
