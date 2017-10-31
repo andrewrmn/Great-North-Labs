@@ -13,44 +13,53 @@ class Tabs {
 		this.settings = $.extend( true, {}, this.defaults, options );
 
 		if( $('.tabs').length ) {
-			this.setup();
 			this.events();
         } else {
             return;
         }
 	}
 
-	setup() {
-		//any general setup code (ex. getting window width) can go here.
-		// console.log('Tabs intialized');
-	}
 
 	events() {
 
-		var tab = $('.tabs .tab__bd'),
-        	activeTab = $('.tabs .is-active .tab__bd');
+		var tab = $('.tab'),
+			tabTab = $('.tab-tab'),
+        	activeTab = $('.tab-tab.is-active');
 
-        function findActiveTab() {
-            tab.each( function() {
-                var tabParent = $(this).parent();
-                if( tabParent.hasClass('is-active') ) {
-                    $(this).slideDown();
-                } else {
-                    $(this).slideUp();
-                }
-            });
-        }
+		tabTab.click(function(){
+			var par = $(this).parent('.tab'),
+				group = par.parent('.tabs');
 
-        $(document).ready(function() {
-            findActiveTab();
-        });
+			group.addClass('user-clicked');
 
-        $('*[data-click-group]').on('click touchstart:not(touchmove)', function() {
-            findActiveTab();
-        });
+			if( !par.hasClass('is-active') ){
+				group.find('.tab').removeClass('is-active');
+				par.addClass('is-active');
+			}
+		});
 
+		function rotateTabs() {
+			$('.tabs').each(function(){
+				var active = $(this).find('.tab.is-active'),
+					first = $(this).find('.tab.first-tab'),
+					next = $(this).find('.tab.is-active').next('.tab');
+
+				active.removeClass('is-active');
+
+				if ( active.next('.tab').length == 0) {
+					first.addClass('is-active');
+				} else {
+					next.addClass('is-active');
+				}
+			});
+		}
+
+		setInterval(function() {
+			if( !$('.tabs').hasClass('user-clicked')){
+				rotateTabs();
+			}
+		}, 3000);
 	}
-
 }
 
 module.exports = Tabs;

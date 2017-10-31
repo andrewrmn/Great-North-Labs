@@ -34,6 +34,14 @@ if( have_rows('content_blocks') ):
 
             get_template_part( 'fields/textBlock');
 
+        elseif( get_row_layout() == 'logos' ):
+
+            get_template_part( 'fields/logos');
+
+        elseif( get_row_layout() == 'featured_content' ):
+
+            get_template_part( 'fields/featuredContent');
+
         endif;
 
     endwhile;

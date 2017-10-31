@@ -7,7 +7,8 @@
 // Hero Masks
 // ----------------------------------------
 
-.home-hero {
+.home-hero,
+.hero-tall {
 	padding: 140px 0 80px;
 
 	@media (min-height: 660px) {
@@ -17,6 +18,12 @@
 		align-items: center;
     }
 }
+
+
+body.hero-mask {
+	overflow: auto;
+}
+
 
 .hero-mask {
 	overflow: hidden;
@@ -40,50 +47,29 @@
 	&:after {
 		opacity: 0.8;
 		z-index: -1;
+		background: $brand;
 	}
     .bg-image {
         z-index: -2;
     }
+
+	.bg-image.bg-image--poly {
+		z-index: -1;
+		opacity: 0.8;
+	}
 }
 
 .hero-mask--home {
-	&:before {
-		position: fixed;
-		background: url('../images/polys/poly-home.png') center / cover no-repeat;
-	}
-    &:after {
-		position: fixed;
-		background: $brand;
-    }
+	// &:before {
+	// 	position: fixed;
+	// 	background: url('../images/polys/poly-home.png') center / cover no-repeat;
+	// }
+    &:after,
 	.bg-image {
-        z-index: -2;
 		position: fixed;
     }
 }
 
-.venture-fund .hero-mask {
-	&:before {
-		background: url('../images/polys/poly-venture.png') center / cover no-repeat;
-	}
-    &:after {
-		background: $green;
-    }
-	.bg-image {
-        z-index: -2;
-    }
-}
-
-.startup-school .hero-mask {
-	&:before {
-		background: url('../images/polys/poly-home.png') center / cover no-repeat;
-	}
-    &:after {
-		background: $orange;
-    }
-	.bg-image {
-        z-index: -2;
-    }
-}
 
 
 // ----------------------------------------

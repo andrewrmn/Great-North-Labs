@@ -9,6 +9,14 @@
 
 .post.post-preview {
     margin-bottom: 50px;
+
+    .entry-header {
+        margin-bottom: 0;
+    }
+
+    .post-preview-sm & {
+        margin-bottom: 0;
+    }
 }
 
 .post-preview__img.bg-image,
@@ -18,10 +26,18 @@
     position: relative;
     margin-bottom: 30px;
 
+    .post-preview-sm & {
+        height: 240px;
+        margin-bottom: 15px;
+    }
+
     @include stop-at($small) {
         height: 180px;
+        margin-bottom: 15px;
     }
 }
+
+
 
 .post-preview a {
     display: block;
@@ -30,6 +46,10 @@
 
 .entry-content {
     margin-bottom: 10px;
+
+    @include stop-at($small) {
+        margin-bottom: 5px;
+    }
 }
 
 .entry-header {
@@ -56,6 +76,10 @@
 .post-content {
     max-width: 750px;
     margin: 60px auto;
+
+    @include stop-at($small) {
+        margin: 30px auto;
+    }
 }
 
 .post__img.bg-image {

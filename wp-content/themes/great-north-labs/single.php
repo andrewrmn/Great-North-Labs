@@ -19,7 +19,15 @@ get_header(); ?>
 		endwhile; // End of the loop.
 		?>
 
+		<?php if(is_singular('careers')): ?>
+
+			<?php gravity_form( 2, true, true, false, '', true, 12 ); ?>
+
+		<?php endif; ?>
+
 	</div>
+
+
 
 <?php
 

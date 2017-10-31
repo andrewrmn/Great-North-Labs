@@ -30,3 +30,24 @@ function great_north_labs_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'great_north_labs_pingback_header' );
+
+
+
+// Allow SVG Uploads
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+function remove_customize_page(){
+	global $submenu;
+	unset($submenu['themes.php'][6]); // remove customize link
+}
+add_action( 'admin_menu', 'remove_customize_page');
+
+
+// Options pages
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}

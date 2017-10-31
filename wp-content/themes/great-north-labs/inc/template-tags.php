@@ -36,7 +36,7 @@ if ( ! function_exists( 'great_north_labs_posted_on' ) ) :
 			'' . esc_html( get_the_author() ) . ''
 		);
 
-		echo '<p class="h4"><span class="posted-on">' . $byline . '</span> // <span class="byline text-light"> ' . $posted_on . '</span></p>'; // WPCS: XSS OK.
+		echo '<p class="h4"><span class="posted-on">' . $byline . '</span> // <span class="byline text-light"> ' . get_the_date() . '</span></p>'; // WPCS: XSS OK.
 	}
 endif;
 

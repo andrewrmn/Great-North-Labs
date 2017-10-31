@@ -1,0 +1,54 @@
+// ---------------------------------------------------------------------
+//  Stick to top
+// ---------------------------------------------------------------------
+
+@mixin theme($color) {
+
+	.split-block__intro:after,
+	.event-preview__img:after,
+	.has-accent:before,
+	.hero-mask:after {
+		background: $color;
+	}
+
+	.theme-color,
+	.tab.is-active .tab-tab {
+		color: $color;
+	}
+
+	::selection {
+	    background: darken($color, 5%);
+	}
+	::-moz-selection {
+	   background: darken($color, 5%);
+	}
+}
+
+.page-id-7,
+.venture-fund {
+	//@include theme($green);
+}
+
+.page-id-9,
+.startup-school {
+	@include theme($orange);
+}
+
+.page-id-11,
+.our-team {
+	@include theme($brand-dark);
+}
+
+.page-id-138,
+.portfolio {
+	@include theme($black);
+}
+
+
+.theme-color {
+	color: $brand;
+
+	svg {
+		fill: currentColor;
+	}
+}

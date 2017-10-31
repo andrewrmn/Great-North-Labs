@@ -13,20 +13,25 @@
 	<a href="<?php the_permalink(); ?>" title="Article <?php the_title(); ?>">
 
 		<figure class="post-preview__img bg-image">
-			<?php if(get_the_post_thumbnail()): ?>
-			<?php the_post_thumbnail(); ?>
-			<?php else: ?>
-				<img src="<?php home_url(); ?>/wp-content/uploads/2017/10/backup.png" alt="poly pattern" />
+			<?php if( has_post_thumbnail() ):
+				the_post_thumbnail();
+			else: $image = get_field('blog_fallback', 'options'); ?>
+	            <figure class="bg-image">
+	                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+	            </figure>
 			<?php endif; ?>
 		</figure>
-
 
 		<div class="entry-content">
 			<?php great_north_labs_posted_on(); ?>
 		</div>
 
 		<header class="entry-header">
-			<?php the_title( '<h3 class="h2">', '</h3>' ); ?>
+			<?php if(is_home()):
+				the_title( '<h3 class="h2">', '</h3>' );
+			else:
+				the_title( '<h4 class="h3">', '</h4>' );
+			endif; ?>
 		</header><!-- .entry-header -->
 	</a>
 </article><!-- #post-<?php the_ID(); ?> -->

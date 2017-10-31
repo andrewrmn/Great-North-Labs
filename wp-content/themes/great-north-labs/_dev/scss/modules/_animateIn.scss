@@ -2,7 +2,10 @@
 //  Animate In
 // ---------------------------------------------------------------------
 
-[data-animate-in] {
+
+
+[data-animate-in],
+.fade-in {
 	opacity: 0;
 	transition: transform 0.8s ease-in-out;
 }
@@ -30,4 +33,8 @@
 [data-animate-in].in-view {
 	opacity: 1;
 	transform: none;
+}
+
+.page-loaded .fade-in {
+	opacity: 1;
 }

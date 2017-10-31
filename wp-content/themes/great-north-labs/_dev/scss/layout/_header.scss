@@ -47,8 +47,9 @@ $header-height: 120px;
 }
 
 body.home,
-body.venture-fund,
-body.startup-school {
+body.page-template-page-builder,
+body.page-id-19,
+body.careers {
 
 	.site-header {
 		position: absolute;
@@ -98,6 +99,7 @@ $logo-height: 72px;
     overflow: scroll;
 	height: 100%;
     background: transparent;
+	backface-visibility: hidden;
 
 	ul {
 		display: flex;
@@ -144,18 +146,18 @@ $logo-height: 72px;
 	}
 
 	@include stop-at($header-breakpoint) {
-		&:after {
-			content: '';
-			position: absolute;
-			display: block;
-			right: 0;
-			top: 0;
-			width: 120px;
-			height: 100%;
-			background: linear-gradient(90deg, transparent 30%, rgba(0,0,0,0.4) 100%);
-			z-index: 14;
-			pointer-events: none;
-		}
+		// &:after {
+		// 	content: '';
+		// 	position: absolute;
+		// 	display: block;
+		// 	right: 0;
+		// 	top: 0;
+		// 	width: 120px;
+		// 	height: 100%;
+		// 	background: linear-gradient(90deg, transparent 30%, rgba(0,0,0,0.4) 100%);
+		// 	z-index: 14;
+		// 	pointer-events: none;
+		// }
 	}
 
 	@include start-at($header-breakpoint) {
@@ -163,7 +165,23 @@ $logo-height: 72px;
 
 		ul {
 			width: 100%;
-			max-width: 566px;
+			max-width: 94%;
 		}
 	}
+
+	@include start-at($large) {
+		ul {
+			justify-content: flex-end;
+
+			li + li {
+				margin-left: 35px;
+			}
+		}
+	}
+}
+
+
+#wpadminbar {
+	position: fixed;
+	top: 0;
 }

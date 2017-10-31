@@ -10,8 +10,9 @@
  */
 
 ?>
-
-	<?php get_sidebar(); ?>
+	<?php if( !is_page('contact-us') && !is_front_page() ): ?>
+		<?php get_sidebar(); ?>
+	<?php endif; ?>
 
 	</main><!-- #content -->
 

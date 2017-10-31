@@ -5,6 +5,17 @@
 * @package Great_North_Labs
 */
 $headline = get_sub_field('headline');
+$col = 'col--xs--12 col--sm--3';
+$wrapper = 'wrapper wrapper--md';
+
+if( get_sub_field('block_per_row') == '2'){
+    $col = 'col--xs--12 col--sm--6';
+    $wrapper = 'wrapper';
+}
+if( get_sub_field('block_per_row') == '3'){
+    $col = 'col--xs--12 col--sm--4';
+    $wrapper = 'wrapper';
+}
 ?>
 
 <?php if( have_rows('blocks') ): ?>
@@ -15,10 +26,10 @@ $headline = get_sub_field('headline');
         </header>
     <?php endif; ?>
 
-    <div class="wrapper section section--flush-bottom">
+    <div class="<?php echo $wrapper; ?> section section--flush-bottom">
         <div class="row">
             <?php while ( have_rows('blocks') ) : the_row(); ?>
-                <div class="col--xs--12 col--sm--4">
+                <div class="<?php echo $col; ?>">
                     <div class="text-group-tall">
                         <?php $image = get_sub_field('image'); if( !empty($image) ): ?>
                             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />

@@ -32,6 +32,21 @@
    }
 }
 
+.logo-list  {
+	> * {
+		margin-bottom: 40px;
+	}
+
+	a {
+		display: block;
+	}
+
+	img {
+		padding: 10px 0;
+		margin: 0 auto;
+	}
+}
+
 
 // ----------------------------------------
 // Ordered List

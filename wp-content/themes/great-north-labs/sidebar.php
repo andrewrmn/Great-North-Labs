@@ -24,13 +24,13 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				<h4 class="h2">Stay Updated</h4>
 			<?php endif; ?>
 
-			<form class="form newsletter-form <?php if(is_home()): ?>text-group section-short section--flush-bottom<?php else: ?>newsletter-form-inline<?php endif; ?>" action="" method="POST" validate>
+			<form class="form newsletter-form <?php if(is_home()): ?>text-group section-x-short section--flush-bottom<?php else: ?>newsletter-form-inline<?php endif; ?>" action="" method="POST" validate>
 				<div class="field-wrap">
 					<label for="email" class="sr-only">Email</label>
 					<input type="email" placeholder="enter email" name="email" id="email" required />
 				</div>
 
-				<div class="section-short section--flush-bottom">
+				<div class="section-x-short section--flush-bottom">
 					<button type="submit" class="<?php if (is_home()): ?>btn-dark<?php else: ?>btn<?php endif; ?>">Subscribe</button>
 				</div>
 			</form>

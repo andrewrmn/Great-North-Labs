@@ -7,3 +7,135 @@
     background: $gray-light;
     padding: 30px;
 }
+
+
+// ----------------------------------------
+// Split Blocks
+// ----------------------------------------
+
+.split-block {
+    overflow: hidden;
+
+    @include start-at($medium){
+        display: flex;
+        align-items: center;
+        height: 674px;
+    }
+}
+
+.split-block--flip {
+
+    .split-block__intro-text {
+        right: auto;
+        left: 60px;
+    }
+
+    @include start-at($medium){
+
+        .split-block__intro {
+            order: 2;
+
+            &:after {
+                transform: skewX(10deg);
+                right: auto;
+                left: 57px;
+            }
+
+            .bg-image {
+                //left: auto;
+                //right: 0;
+
+                &:after {
+                    transform: skewX(-18deg);
+                    right: auto;
+                    left: -114px;
+                }
+            }
+        }
+    }
+}
+
+.split-block__intro {
+    position: relative;
+
+    &:after {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 339px;
+        right: 57px;
+        background: $brand;
+        mix-blend-mode: multiply;
+        transform: skewX(-10deg);
+
+        @include stop-at($medium){
+            width: 200%;
+            right: -130%;
+            transform: skewX(-40deg);
+        }
+    }
+    
+    @include start-at($medium){
+        height: 100%;
+        width: 50%;
+        flex-grow: 1;
+    }
+
+    .bg-image {
+        position: relative;
+        left: 0;
+
+        @include start-at($medium){
+            left: auto;
+            position: absolute;
+
+            &:after {
+                content: '';
+                height: 100%;
+                position: absolute;
+                top: 0;
+                width: 339px;
+                right: -114px;
+                background: white;
+                transform: skewX(18deg);
+            }
+        }
+    }
+}
+
+.split-block__intro-text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 336px;
+    top: 0;
+    right: 60px;
+    color: $white;
+    text-align: center;
+    z-index: 2;
+}
+
+.split-block__intro-text__title {
+    font-size: 1.8rem;
+}
+.split-block__intro-text_num {
+    font-size: 14.0rem;
+    font-weight: 300;
+    line-height: 0.8;
+}
+
+.split-block__content {
+    max-width: 680px;
+
+    @include stop-at($medium){
+        padding: 60px $wrapper-padding;
+    }
+
+    @include start-at($medium){
+        width: 50%;
+        padding: 60px $wrapper-padding;
+    }
+}

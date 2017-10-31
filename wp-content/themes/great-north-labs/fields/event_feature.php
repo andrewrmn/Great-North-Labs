@@ -68,7 +68,7 @@
         <?php $link = get_sub_field('link'); if( $link ): ?>
             <div class="flex flex-j-center">
                 <div>
-                    <a class="arrow-link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+                    <a class="arrow-link theme-color" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
                         <span><?php echo $link['title']; ?> <span class="text-bold"><?php the_sub_field('link_text_bold'); ?></span></span>
                     </a>
                 </div>

@@ -14,19 +14,31 @@ get_header();  while ( have_posts() ) : the_post(); ?>
         <div class="wrapper text-white">
             <div class="text-thin">
                 <h2 class="h1">Great North Labs.</h2>
-                <p class="h3">We are a venture capital fund and startup school hyper-focused on the companies and entrepenuers of tomorrow.</p>
+                <div class="user-content user-content--lead"><?php the_content(); ?></div>
             </div>
 
-            <div class="text-thin section section--flush-bottom flex-after-sm ">
-                <a class="arrow-link arrow-link--inline" href="">
-                    <span>Learn About <span class="text-bold">Our Fund</span></span>
-                </a>
+            <div class="text-thin section-x-short section--flush-bottom flex-after-sm">
+                <?php $link = get_field('link'); if( $link ): ?>
+                    <a class="arrow-link arrow-link--inline" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+                        <span><?php echo $link['title']; ?> <span class="text-bold"><?php the_field('link_bold_text'); ?></span></span>
+                    </a>
+                <?php endif; ?>
 
-                <a class="arrow-link arrow-link--flush" href="">
-                    <span>Discover <span class="text-bold">Startup School</span></span>
-                </a>
+                <?php $link = get_field('link_2'); if( $link ): ?>
+                    <a class="arrow-link arrow-link--flush" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+                        <span><?php echo $link['title']; ?> <span class="text-bold"><?php the_field('link_2_bold_text'); ?></span></span>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
+
+        <figure class="bg-image bg-image--poly">
+			<?php if( get_field('poly_image') ): ?>
+				<img src="<?php the_field('poly_image'); ?>" alt="hexagonal pattern" />
+			<? else: $image = get_field('fallback_poly', 'options'); ?>
+	            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+			<?php endif; ?>
+		</figure>
 
         <figure class="bg-image">
             <?php the_post_thumbnail(); ?>

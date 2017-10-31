@@ -41,6 +41,18 @@
     }
 }
 
+.single-careers {
+    .gform_wrapper {
+        .gform_title {
+            @include h2;
+        }
+
+        .gform_description:after  {
+            display: none;
+        }
+    }
+}
+
 
 // ----------------------------------------
 // Newsletter Form
@@ -95,7 +107,7 @@
 
     @include start-at($medium) {
         padding: 100px 0;
-        
+
         form {
             padding-left: 60px;
         }
@@ -469,33 +481,56 @@ button {
 // ----------------------------------------
 // File Uploader
 // ----------------------------------------
-.fileUpload {
-
-    input {
-        height: auto;
-        display: block;
-        border: 1px dashed $gray-light;
-        text-align: center;
-        padding: 38px 24px;
-        margin-bottom: 12px;
-        font-size: 14px;
-        cursor: pointer;
-        transition: all $transition;
-
-        &:hover {
-            border-color: $brand;
-            color: $brand;
-        }
-    }
-
-    .ginput_container {
-        height: auto;
-    }
-
-    .gform_drop_instructions {
-        //display: none;
+.file-upload {
+    .ginput_container input {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        line-height: 1;
     }
 }
+
+.isIE .file-upload,
+.isEDGE .file-upload {
+
+    .ginput_container_fileupload {
+        position: relative;
+    }
+
+    .ginput_container_fileupload input {
+        display: flex;
+        padding: 0;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        width: 100%;
+        line-height: 1;
+        transform: rotateY(180deg);
+
+        &::-ms-value {
+            background: transparent !important;
+            border: none !important;
+            width: 100%;
+            transform: rotateY(180deg);
+            padding-left: 10px;
+        }
+
+        &::-ms-browse {
+            color: $black;
+            border: none;
+            box-shadow: none;
+            border-radius: 5px;
+            font-size: 12px;
+            background: $white;
+            padding: 0 5px;
+            height: 20px;
+            line-height: 1;
+            border: 1px solid darken($border, 5%);
+            transform: rotateY(180deg);
+        }
+    }
+}
+
 
 
 // ----------------------------------------

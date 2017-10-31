@@ -1,153 +1,171 @@
 // // ---------------------------------------------------------------------
 // //  Tabs
 // // ---------------------------------------------------------------------
-//
-// .tabs {
-//     position: relative;
-// }
-//
-// .tab {
-//
-//     @include start-at($medium) {
-//         display: flex;
-//         align-items: center;
-//         flex-wrap: wrap;
-//         justify-content: space-between;
-//     }
-//
-//     &:last-child .tab-tab:after {
-//         display: none;
-//     }
-//
-//     .highlight {
-//        transition: color $trans;
-//     }
-//
-//     &.is-active .h3 .highlight {
-//         color: $green;
-//     }
-// }
-//
-//
-// // ----------------------------------------
-// // Tab Tab
-// // ----------------------------------------
-//
-// .tab-tab {
-//     position: relative;
-//     background: $white;
-//     border-radius: 4px;
-//     height: auto;
-//     padding: 15px 20px;
-//     display: flex;
-//     align-items: center;
-//     margin-bottom: 20px;
-//     transition: box-shadow $trans, border-color $trans , opacity $trans;
-//     border: 1px solid $white;
-//
-//     svg {
-//         display: inline-block;
-//         fill: $brand;
-//         margin: 0 3px;
-//     }
-//
-//     &:after {
-//         content: '';
-//         display: block;
-//         position: absolute;
-//         width: 16px;
-//         height: 66px;
-//         left: 15px;
-//         bottom: -30px;
-//         background: url('../images/arrows.svg') center / cover no-repeat;
-//         z-index: 2;
-//         animation: pulse 2s ease infinite;
-//     }
-//
-//     @include stop-at($medium) {
-//         border-color: rgba(205,209,217,0.20);
-//         box-shadow: 0 6px 10px 0 rgba(205,209,217,0.50);
-//
-//         .h3 {
-//             font-size: 16px;
-//         }
-//
-//         &:after {
-//             left: calc(100% - 25px);
-//         }
-//     }
-//
-//     @include start-at($medium) {
-//         width: 60%;
-//         max-width: 652px;
-//         height: 145px;
-//         padding: 15px 50px;
-//         //cursor: pointer;
-//         opacity: 0.6;
-//
-//         &:after {
-//             opacity: 0;
-//             transition: opacity $trans, box-shadow $trans, border-color $trans;
-//         }
-//
-//         .is-active & {
-//             border-color: rgba(205,209,217,0.20);
-//             box-shadow: 0 6px 10px 0 rgba(205,209,217,0.50);
-//             opacity: 1;
-//
-//             &:after {
-//                 opacity: 1;
-//             }
-//         }
-//     }
-// }
-//
-// // ----------------------------------------
-// // Tab Image
-// // ----------------------------------------
-//
-// .tab-img {
-//     padding: 0px 0 40px;
-//
-//     img {
-//         margin: 0 auto;
-//     }
-//
-//     @include start-at($medium) {
-//         padding: 20px 40px;
-//         width: 40%;
-//         position: absolute;
-//         right: 0;
-//         top: 50%;
-//         transform: translate3d(0, -50%, 0);
-//
-//         img {
-//             margin: 0 auto;
-//             opacity: 0;
-//             transition: opacity $trans, transform $trans;
-//             transform: translateY(30px);
-//         }
-//
-//         .is-active & img {
-//             opacity: 1;
-//             transform: translateY(0);
-//         }
-//     }
-// }
-//
-//
-// // ----------------------------------------
-// // Pulse
-// // ----------------------------------------
-//
-// @keyframes pulse {
-//     0% {
-//         transform: translateY(0);
-//     }
-//     50% {
-//         transform: translateY(4px);
-//     }
-//     100% {
-//         transform: translateY(0);
-//     }
-// }
+
+.tabs {
+    position: relative;
+
+    @include start-at($medium) {
+
+    }
+}
+
+.tabs {
+
+}
+
+.tabs {
+    position: relative;
+}
+
+.tab {
+
+    @include start-at($medium) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &:last-child .tab-tab:after {
+        display: none;
+    }
+
+    .highlight {
+       transition: color $trans;
+    }
+
+    &.is-active .h3 .highlight {
+        color: $brand;
+    }
+}
+
+
+// ----------------------------------------
+// Tab Tab
+// ----------------------------------------
+
+.tab-tab {
+    position: relative;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    //padding: 10px 0;
+    margin: 5px 0;
+
+    h4 {
+        @include h3;
+        transition: font-size $trans, color $trans;
+    }
+
+    .is-active & {
+        h4 {
+            font-size: 3.0rem;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @include stop-at($medium) {
+
+    }
+
+    @include start-at($medium) {
+        width: 50%;
+        max-width: 652px;
+
+        &:after {
+            opacity: 0;
+            transition: opacity $trans, box-shadow $trans, border-color $trans;
+        }
+
+        .is-active & {
+            opacity: 1;
+            color: $brand;
+
+            h4 {
+                font-size: 3.6rem;
+            }
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// ----------------------------------------
+// Tab Body
+// ----------------------------------------
+
+.tab-body {
+    //padding: 0px 0 40px;
+
+    .icons {
+        margin-bottom: 10px;
+
+        svg {
+            fill: $gray-dark;
+        }
+    }
+
+    @include stop-at($medium) {
+        > *.icons,
+        .is-active & > *.icons {
+            display: none;
+        }
+
+        > * {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.8s ease, max-height 0.4s ease;
+
+        }
+
+        .is-active & > * {
+            opacity: 1;
+            max-height: 500px;
+            transition: none;
+        }
+    }
+
+    @include start-at($medium) {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+
+        > * {
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity $trans, transform $trans;
+            transform: translateY(30px);
+        }
+
+        .is-active & > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+// ----------------------------------------
+// Pulse
+// ----------------------------------------
+
+@keyframes pulse {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

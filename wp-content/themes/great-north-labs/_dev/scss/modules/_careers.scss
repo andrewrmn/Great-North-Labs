@@ -1,0 +1,57 @@
+// ---------------------------------------------------------------------
+//  Careers
+// ---------------------------------------------------------------------
+
+.career-block {
+    display: block;
+    max-width: 945px;
+    width: $wrapper-percentage;
+    margin: 0 auto 80px;
+    border-radius: 6px;
+
+    @include start-at($medium) {
+        //padding: 60px 65px;
+    }
+
+    .h3 {
+        margin-bottom: 20px;
+    }
+
+    .career-list {
+        margin-top: 10px;
+    }
+
+    a.career {
+        display: block;
+        color: $gray-dark;
+        padding: 18px 0;
+        border-bottom: 1px solid $border;
+
+        &:hover {
+            color: $brand;
+        }
+
+        @include start-at($medium) {
+
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 24px;
+            top: calc(50% - 6px);
+            width: 8px;
+            height: 12px;
+            background: url('../images/svgs/arrow-right.svg') center / auto no-repeat;
+            transition: transform $trans;
+        }
+
+        &:hover {
+            opacity: 1;
+            &:after {
+                transform: translateX(4px);
+            }
+        }
+    }
+}
