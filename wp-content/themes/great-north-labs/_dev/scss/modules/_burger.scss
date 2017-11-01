@@ -2,35 +2,31 @@
 //  Burger Styles
 // ---------------------------------------------------------------------
 
-$burger-width: 22px;
+$burger-width: 18px;
 $burger-height: 12px;
-$burger-color: $black;
-$burger-bg-color: $white;
+$burger-color: $white;
+$burger-bg-color: $black;
 
 
 .burger {
 	overflow: hidden;
-	position: relative;
+	position: fixed;
 	z-index: 11;
-	width: 44px;
-	height: 44px;
+	width: 48px;
+	height: 48px;
+	bottom: 12px;
+	right: 12px;
 	transition: all $transition;
 	align-self: center;
 	display: flex;
+	background: $black;
 
-	@include start-at ($header-breakpoint) {
-		display: none;
+	&:hover {
+		cursor: pointer;
 	}
 
-	// Use for background smaller than hit zone (mobile friendly)
-	&:before {
-		content: "";
-		width: 40px;
-		height: 36px;
-		background-color: $burger-bg-color;
-		position: absolute;
-		top: calc(50% - 18px);
-		left: calc(50% - 20px);
+	@include start-at($header-breakpoint) {
+		display: none;
 	}
 }
 
@@ -65,7 +61,15 @@ $burger-bg-color: $white;
 // Active Styles
 // ----------------------------------------
 
-.mobile-menu-is-open {
+.mobile-nav-is-open {
+	.burger {
+		background: $white;
+	}
+
+	.burger-inner > * {
+		background: $black;
+	}
+
 	.burger-top {
 		top: 50%;
 		margin-top: -2px;

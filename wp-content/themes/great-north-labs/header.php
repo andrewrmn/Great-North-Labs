@@ -14,11 +14,7 @@
 <?php
 	global $post;
 	$post_slug=$post->post_name;
-
 	$bodyClass = $post_slug;
-	if(is_front_page()){
-		$bodyClass = 'hero-mask hero-mask--home';
-	}
 ?>
 
 <body <?php body_class($bodyClass); ?>>
@@ -35,6 +31,7 @@
 			</h1>
 
 			<nav id="site-navigation" class="main-navigation">
+				<span class="mobile-nav-logo"><img src="<?php echo get_template_directory_uri(); ?>/app/images/Great-North-Labs-logo-white.svg" alt="<?php bloginfo( 'name' ); ?> logo" /></span>
 				<ul>
 					<?php
 						$primaryNav = array(
@@ -46,9 +43,32 @@
 						wp_nav_menu( $primaryNav );
 					?>
 				</ul>
+
+				<ul class="main-navigation__secondary has-accent">
+					<?php
+						$primaryNav = array(
+							'menu' => 'Footer Menu',
+							'container_class' => false,
+							'container'      => '',
+							'items_wrap'    => '%3$s',
+						);
+						wp_nav_menu( $primaryNav );
+					?>
+				</ul>
 			</nav>
 		</div>
 
+		<div class="burger js-toggle-mobile-nav">
+			<span class="sr-only">toggle mobile nav</span>
+			<div class="burger-inner">
+				<span class="burger-top"></span>
+				<span class="burger-middle"></span>
+				<span class="burger-bottom"></span>
+			</div>
+		</div>
 	</header>
+
+
+
 
 	<main id="content" class="site-content fade-in">

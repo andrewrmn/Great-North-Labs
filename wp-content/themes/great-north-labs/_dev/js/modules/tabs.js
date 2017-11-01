@@ -56,7 +56,7 @@ class Tabs {
 
 		setInterval(function() {
 			if( !$('.tabs').hasClass('user-clicked')){
-				rotateTabs();
+				//rotateTabs();
 			}
 		}, 3000);
 	}

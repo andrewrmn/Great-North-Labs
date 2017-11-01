@@ -2,14 +2,11 @@
 //  Global Header Styles
 // ---------------------------------------------------------------------
 
-//https://jsfiddle.net/jvhb4bvn/
-
 .site-header {
 	position: relative;
-	z-index: 10;
+	z-index: 100;
 	width: 100%;
-	background: $brand;
-	background: url('../images/polys/poly-hd-sm.png') center / cover no-repeat;
+	background: $black;
 
 	&:after {
 		content: '';
@@ -19,9 +16,9 @@
 		top: 0;
 		left: 0;
 		position: absolute;
-		background: $brand;
-		opacity: 0.8;
+		opacity: 0.2;
 		z-index: -1;
+		background: url('../images/polys/poly-hd-sm.png') center / cover no-repeat;
 	}
 }
 
@@ -37,19 +34,26 @@ $header-height: 120px;
 	padding: 15px 0;
 
 	@include stop-at($header-breakpoint) {
-		padding: 0 0 0 $wrapper-padding;
+		padding: 0;
 		width: 100%;
 	}
 
 	@include start-at($header-breakpoint) {
-		height: 120px;
+		height: auto;
+		flex-wrap: wrap;
+	}
+
+	@include start-at($large) {
+		height: $header-height;
+		flex-wrap: nowrap;
 	}
 }
 
 body.home,
 body.page-template-page-builder,
 body.page-id-19,
-body.careers {
+body.careers,
+body.error404 {
 
 	.site-header {
 		position: absolute;
@@ -62,6 +66,11 @@ body.careers {
 	}
 }
 
+@include stop-at($header-breakpoint) {
+body.mobile-nav-is-open {
+	overflow: hidden;
+}
+}
 
 // ----------------------------------------
 // Logo Styles
@@ -72,12 +81,28 @@ $logo-height: 72px;
 
 .site-branding {
 	flex-grow: 1;
-	width: 106px;
+
+	@include start-at($header-breakpoint) {
+		width: 100%;
+	}
+
+	@include start-at($large) {
+		width: 106px;
+	}
 
 	a {
 		display: block;
-		max-width: 106px;
-		width: 100%;
+		width: 78px;
+		margin: 0 auto;
+
+		@include start-at($header-breakpoint) {
+			width: 106px;
+			margin: 10px auto 20px;
+		}
+
+		@include start-at($large) {
+			margin: 0;
+		}
 	}
 
 	img {
@@ -86,10 +111,14 @@ $logo-height: 72px;
 }
 
 
+
+// body {
+// 	overflow: hidden;
+// }
+
 // ----------------------------------------
 // Site Navigation
 // ----------------------------------------
-
 
 .main-navigation {
 	flex-grow: 1;
@@ -101,21 +130,22 @@ $logo-height: 72px;
     background: transparent;
 	backface-visibility: hidden;
 
+
 	ul {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		min-width: 566px;
-		width: auto;
+
 		padding-right: $wrapper-padding;
 
 		li {
 			height: 100%;
 		}
+	}
 
-		li:first-child {
-			display: none;
-		}
+	ul.main-navigation__secondary,
+	.mobile-nav-logo {
+		display: none;
 	}
 
 	a {
@@ -146,22 +176,102 @@ $logo-height: 72px;
 	}
 
 	@include stop-at($header-breakpoint) {
-		// &:after {
-		// 	content: '';
-		// 	position: absolute;
-		// 	display: block;
-		// 	right: 0;
-		// 	top: 0;
-		// 	width: 120px;
-		// 	height: 100%;
-		// 	background: linear-gradient(90deg, transparent 30%, rgba(0,0,0,0.4) 100%);
-		// 	z-index: 14;
-		// 	pointer-events: none;
-		// }
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		background: $brand-dark;
+		z-index: 11;
+
+		.mobile-nav-logo {
+			height: $header-height-sm;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+
+			img {
+				width: 78px;
+			}
+		}
+
+		ul {
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			margin: 40px 0 10px;
+
+			li {
+				width: 100%;
+				text-align: right;
+				margin-bottom: 10px;
+			}
+
+			a {
+				display: inline-block;
+				font-weight: 300;
+				font-size: 2.4rem;
+				text-transform: none;
+			}
+		}
+
+		ul.main-navigation__secondary {
+			margin: 0 0 100px 0;
+			display: flex;
+
+			&:before {
+				width: 80px;
+				height: 1px;
+				background: white;
+			}
+
+			li {
+				margin-bottom: 2px;
+
+				&:last-child {
+					display: none;
+				}
+			}
+
+			a {
+				font-size: 1.5rem;
+			}
+
+		}
+
+		&:before,
+		&:after {
+			content: '';
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+
+		&:after {
+			z-index: -2;
+			background: url('../images/polys/poly-home.png') center / cover no-repeat;
+			opacity: 0.8;
+		}
+
+		&:before {
+			z-index: -1;
+			background: $brand-dark;
+			opacity: 0.8;
+		}
 	}
 
 	@include start-at($header-breakpoint) {
 		justify-content: flex-end;
+		display: flex !important;
 
 		ul {
 			width: 100%;
@@ -180,6 +290,10 @@ $logo-height: 72px;
 	}
 }
 
+
+body.logged-in.admin-bar {
+	position: relative;
+}
 
 #wpadminbar {
 	position: fixed;

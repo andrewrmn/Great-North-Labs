@@ -43,6 +43,25 @@ class App {
 				});
 			}
 		});
+
+
+		var body = $('body'),
+			trigger = $('.js-toggle-mobile-nav'),
+			nav = $('#site-navigation');
+
+		function toggleMenu(){
+			if( body.hasClass('mobile-nav-is-open') ) {
+				body.removeClass('mobile-nav-is-open');
+				nav.fadeOut(300);
+			} else {
+				body.addClass('mobile-nav-is-open');
+				nav.fadeIn(300);
+			}
+		}
+
+		trigger.click(function(){
+			toggleMenu();
+		})
 	}
 
 	noTouch() {

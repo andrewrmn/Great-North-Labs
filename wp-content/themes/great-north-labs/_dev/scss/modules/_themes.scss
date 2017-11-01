@@ -22,11 +22,19 @@
 	::-moz-selection {
 	   background: darken($color, 5%);
 	}
+
+	@include stop-at($header-breakpoint) {
+		.main-navigation:before {
+			background: $color;
+		}
+	}
+
 }
 
+.home,
 .page-id-7,
 .venture-fund {
-	//@include theme($green);
+	@include theme($brand);
 }
 
 .page-id-9,
@@ -38,12 +46,6 @@
 .our-team {
 	@include theme($brand-dark);
 }
-
-.page-id-138,
-.portfolio {
-	@include theme($black);
-}
-
 
 .theme-color {
 	color: $brand;

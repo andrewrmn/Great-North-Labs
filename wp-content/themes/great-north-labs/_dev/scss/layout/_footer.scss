@@ -13,39 +13,22 @@ $fb: $medium;
     border-top: 1px solid $border;
     border-bottom: 16px solid $gray-dark;
 
-    .wrapper-wide {
 
+    .wrapper-wide {
+        text-align: center;
         @include start-at($fb) {
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
+            text-align: left;
         }
     }
 }
 
-body.home .site-footer {
-    border-top: none;
-    border-bottom: none;
-    color: $white;
-
-    @media (min-height: 660px) {
-        position: absolute;
-        bottom: 0;
-    }
-
-    .social-list svg {
-        fill: $white;
-    }
-
-    .secondary-navigation a {
-        color: $white;
-    }
-}
-
-
 .secondary-navigation {
     display: flex;
     align-items: baseline;
+    justify-content: center;
     margin-bottom: 20px;
     flex-wrap: wrap;
     max-width: 100%;
@@ -63,6 +46,7 @@ body.home .site-footer {
         margin-bottom: 0;
         order: 2;
         flex-wrap: nowrap;
+        justify-content: flex-end;
     }
 
     li {

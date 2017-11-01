@@ -11,8 +11,7 @@
 get_header();  while ( have_posts() ) : the_post(); ?>
 
 	<div class="hero hero-mask <?php if (get_field('tall_intro')): ?>hero-tall<?php endif; ?>">
-		<div class="wrapper text-white">
-
+		<div class="wrapper text-white" data-animate-in="up">
 			<h2 class="h1"><?php the_field('headline'); ?></h2>
 			<div class="text-thin user-content user-content--lg">
 				<?php the_content(); ?>

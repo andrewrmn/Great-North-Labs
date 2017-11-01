@@ -10,7 +10,7 @@
  */
 
 ?>
-	<?php if( !is_page('contact-us') && !is_front_page() ): ?>
+	<?php if( !is_page('contact-us') ): ?>
 		<?php get_sidebar(); ?>
 	<?php endif; ?>
 

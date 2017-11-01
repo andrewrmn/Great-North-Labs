@@ -52,3 +52,333 @@
         padding-left: 100px;
     }
 }
+
+
+
+
+// ---------------------------------------------------------------------
+//  Tribe Overrides
+// ---------------------------------------------------------------------
+
+.tribe-events-notices {
+    background: rgba($brand, 0.4);
+    color: $black;
+    text-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+.tribe-events-calendar th {
+    font-weight: 500;
+}
+
+.tribe-events-button,
+.tribe-button.tribe-button--rsvp {
+    display: inline-block;
+    text-align: center;
+    min-width: 140px;
+    background: $gray-dark !important;
+    border: 1px solid $gray-dark !important;
+    color: white;
+    line-height: 1;
+    letter-spacing: 2px;
+    padding: 17px 12px 15px;
+    position: relative;
+    transition: background $transition, color $transition;
+
+    font-size: 13px;
+    font-weight: 500 !important;
+    // //line-height: 1.2;
+    letter-spacing: 1.86px !important;
+    text-transform: uppercase !important;
+
+    &:hover {
+        color: $gray-dark !important;;
+        background: transparent !important;
+    }
+}
+
+.tribe-bar-submit {
+
+    &:after {
+        bottom: 16px;
+        right: 12px;
+        background: $white;
+    }
+}
+
+#tribe-bar-form {
+    background: $white !important;
+}
+
+#tribe-bar-form label {
+    font-weight: 500 !important;
+}
+
+.tribe-bar-views-inner,
+#tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a {
+    background: transparent !important;
+    opacity: 1 !important;
+    transition: opacity $trans;
+}
+
+#tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a:hover {
+    opacity: 0.6 !important;
+}
+
+.tribe-events-calendar div[id*=tribe-events-daynum-], .tribe-events-calendar div[id*=tribe-events-daynum-] a,
+.tribe-events-single-section-title,
+.single-tribe_events #tribe-events-content .tribe-events-event-meta dt {
+    font-weight: 500 !important;
+}
+
+#tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.tribe-events-month-event-title,
+#tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.tribe-events-month-event-title a {
+    font-weight: 500 !important;
+    font-size: 13px;
+    transition: color $trans, opacity $trans;
+}
+
+
+.tribe-events-gcal.tribe-events-button,
+.tribe-events-ical.tribe-events-button {
+    background: transparent !important;
+    color: $gray-dark !important;
+    border: none !important;
+    padding: 0 !important;
+    display: flex !important;
+
+    &:before {
+        display: block;
+        display: none;
+    }
+}
+
+.tribe-events-cal-links {
+    display: flex !important;
+
+    > * {
+        margin-right: 20px;
+    }
+
+    > * + * {
+        margin-right: 0;
+    }
+
+    @include start-at($large) {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.tribe-events-back,
+.single-tribe_events .tribe-events-schedule.tribe-clearfix h2,
+.tribe-events-list-separator-month,
+.tribe-event-schedule-details,
+button.tribe-button {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    // //line-height: 1.2;
+    letter-spacing: 1.86px !important;
+    text-transform: uppercase !important;
+}
+
+.tribe-events-nav-previous,
+.tribe-events-nav-next {
+    display: none !important;
+}
+
+.single-tribe_events .tribe-events-event-meta {
+    border-left: none;
+    border-right: none;
+    background: transparent !important;
+    border-color: $border;
+    margin-bottom: 10px;
+}
+
+.single-tribe_events .tribe-events-event-meta.secondary {
+    border-top: none;
+    margin-top: 0;
+}
+
+
+.single-tribe_events .tribe-events-schedule.tribe-clearfix h2 {
+    margin-bottom: 0;
+}
+
+.tribe-events-single-event-title {
+    font-size: 3.8rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    line-height: 50px !important;
+    margin-bottom: 10px !important;
+
+    @include start-at($medium) {
+        font-size: 44px !important;
+        line-height: 50px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+.single-tribe_events #tribe-events-header {
+    margin: 0 0 10px !important;
+}
+
+
+
+
+
+.single-tribe_events .tribe-events-event-image {
+    @include bg-image;
+    height: 307px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include stop-at($small) {
+        height: 180px;
+        margin-bottom: 15px;
+    }
+}
+
+
+#rsvp-now {
+    margin-top: 30px;
+}
+
+.tribe-events-tickets {
+    background: white !important;
+}
+
+.tribe-button.tribe-button--rsvp,
+.tribe-button,
+button.tribe-button {
+    border-radius: 0 !important;
+
+    position: relative;
+    border: 1px solid $gray-dark;
+    background: $gray-dark !important;
+    color: $white !important;
+    transition: all $trans;
+
+    &:hover {
+        background: white !important;
+        color: $gray-dark !important;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -4px;
+        background: white;
+        width: 13px;
+        height: 13px;
+        border-right: 1px solid $gray-dark;
+        transform: rotate(45deg);
+        transform-origin: top right;
+    }
+}
+
+.tribe-button.tribe-button--rsvp {
+    margin: 20px 0 0 0 !important;
+}
+
+.tribe-button {
+
+}
+
+td.add-to-cart {
+    padding: 0 !important;
+}
+
+.tribe-tickets-table {
+
+    td {
+        padding: 0 0 !important;
+    }
+
+    label {
+        @include h4;
+    }
+}
+
+#tribe-bar-form input[type=text] {
+    border-bottom: 1px solid $border !important;
+}
+
+
+.tribe-events-list-separator-month {
+    background: transparent !important;
+    border-bottom: 1px solid $border;
+}
+
+.tribe-events-venue-details {
+    font-weight: 400 !important;
+}
+
+.tribe-events-gmap {
+    display: block;
+    margin-top: 4px;
+}
+
+.ticket-cost {
+    font-weight: 500 !important;
+}
+
+.tribe-events-event-cost .tribe-out-of-stock, .tribe-events-event-cost .tribe-tickets-left,
+.ticket-cost {
+    border: none !important;
+    background: transparent !important;
+    border-bottom: 1px solid $border !important;
+}
+
+
+.tribe-events-calendar th {
+    background: transparent !important;
+    color: $white !important;
+    border: 1px solid $black;
+
+    overflow: hidden;
+    position: relative;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+
+    &:before {
+        opacity: 0.8;
+        z-index: -1;
+        background: $black !important;
+    }
+
+    &:after {
+        opacity: 1;
+        z-index: -2;
+        background: url('../images/polys/poly-hd-sm.png') center / cover no-repeat !important;
+    }
+}
+
+.tribe-events-calendar {
+    border: none !important;
+}

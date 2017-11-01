@@ -7,7 +7,6 @@
 // Hero Masks
 // ----------------------------------------
 
-.home-hero,
 .hero-tall {
 	padding: 140px 0 80px;
 
@@ -18,12 +17,6 @@
 		align-items: center;
     }
 }
-
-
-body.hero-mask {
-	overflow: auto;
-}
-
 
 .hero-mask {
 	overflow: hidden;
@@ -47,7 +40,7 @@ body.hero-mask {
 	&:after {
 		opacity: 0.8;
 		z-index: -1;
-		background: $brand;
+		background: $black;
 	}
     .bg-image {
         z-index: -2;
@@ -58,18 +51,6 @@ body.hero-mask {
 		opacity: 0.8;
 	}
 }
-
-.hero-mask--home {
-	// &:before {
-	// 	position: fixed;
-	// 	background: url('../images/polys/poly-home.png') center / cover no-repeat;
-	// }
-    &:after,
-	.bg-image {
-		position: fixed;
-    }
-}
-
 
 
 // ----------------------------------------

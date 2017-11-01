@@ -8,6 +8,15 @@
     padding: 30px;
 }
 
+.block-row > *:nth-child(3n + 1) .has-accent:before {
+    background: $brand-dark;
+}
+.block-row > *:nth-child(3n + 2) .has-accent:before {
+    background: $brand;
+}
+.block-row > *:nth-child(3n + 3) .has-accent:before {
+    background: $orange;
+}
 
 // ----------------------------------------
 // Split Blocks
@@ -75,7 +84,7 @@
             transform: skewX(-40deg);
         }
     }
-    
+
     @include start-at($medium){
         height: 100%;
         width: 50%;

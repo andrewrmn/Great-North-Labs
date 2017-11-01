@@ -62,7 +62,9 @@
     font-weight: 500;
 }
 
-.arrow-link {
+.arrow-link,
+.tribe-events-gcal.tribe-events-button,
+.tribe-events-ical.tribe-events-button {
     @include h5;
     display: flex;
     color: inherit;

@@ -30,8 +30,6 @@ class Viewport {
 		function detection() {
 			for(var i = 0; i < items.length; i++) {
 				var el = $( items[i] );
-
-				console.log('scroll detect');
 				if( el.isOnScreen() ){
 					el.addClass('in-view');
 				} else {
@@ -44,15 +42,10 @@ class Viewport {
             waiting = false;
 
 		$(window).on("resize scroll", function(){
-			if (waiting) {
-		        return;
-		    }
-			waiting = true;
+
 			detection();
 
-			setTimeout(function () {
-		        waiting = false;
-		    }, 100);
+		
 		});
 
 		$(document).ready(function(){

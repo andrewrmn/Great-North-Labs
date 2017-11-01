@@ -11,7 +11,7 @@ $body = get_sub_field('body');
 
 <div class="wrapper-full section bg-white">
 
-    <header class="wrapper wrapper--thin text-center">
+    <header class="wrapper wrapper--thin text-center" data-animate-in="up">
         <?php if($headline): ?>
         <h3 class="h2"><?php echo $headline; ?></h3>
         <?php endif; ?>
@@ -33,7 +33,7 @@ $body = get_sub_field('body');
     <div class="wrapper section-short section--flush-bottom">
         <div class="row">
     	<?php while ($query->have_posts()): $query->the_post(); ?>
-            <div class="col--xs--12 col--sm--4 stack-sm post-preview-sm">
+            <div class="col--xs--12 col--sm--4 stack-sm post-preview-sm" data-animate-in="up">
                 <?php get_template_part( 'template-parts/content-preview' ); ?>
             </div>
     	<?php endwhile; ?>

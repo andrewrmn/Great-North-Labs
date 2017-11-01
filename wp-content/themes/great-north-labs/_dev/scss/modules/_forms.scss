@@ -73,12 +73,14 @@
 .newsletter-wrap {
     padding: 60px 0;
     border-top: 1px solid $border;
+    text-align: center;
 
     .h2 {
         margin-bottom: 10px;
     }
 
     @include start-at($small) {
+        text-align: left;
 
         .wrapper {
             display: flex;
@@ -296,7 +298,8 @@ textarea {
     }
 }
 
-.gform_footer {
+.gform_footer,
+.tribe-bar-submit {
     position: relative;
     display: inline-block;
 

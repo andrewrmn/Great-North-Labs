@@ -9,52 +9,28 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="hero hero-mask hero-tall">
+		<div class="wrapper text-white text-center">
+			<p class="h1"><?php esc_html_e( 'Oops! This page can&rsquo;t be found.', 'great-north-labs' ); ?></p>
+			<p>Please use the navigation to get to a working page on the site.</p>
+		</div>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'great-north-labs' ); ?></h1>
-				</header><!-- .page-header -->
+		<figure class="bg-image bg-image--poly">
+			<?php if( get_field('poly_image') ): ?>
+				<img src="<?php the_field('poly_image'); ?>" alt="hexagonal pattern" />
+			<? else: $image = get_field('fallback_poly', 'options'); ?>
+	            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+			<?php endif; ?>
+		</figure>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'great-north-labs' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'great-north-labs' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'great-north-labs' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		<figure class="bg-image">
+			<?php if( has_post_thumbnail() ):
+				the_post_thumbnail();
+			else: $image = get_field('fallback_poly', 'options'); ?>
+	                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+			<?php endif; ?>
+		</figure>
+	</div>
 
 <?php
 get_footer();
